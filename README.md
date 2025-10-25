@@ -1,14 +1,26 @@
-# loofailid
-midaiganes
+# Novitus printeri sertifikaatide generaator
 
-1. luba scripte jooksutada
+## Kasutamine
+
+1. Luba skriptide käivitamine:
+```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
 
-2. kopeeri fail loo.ps1
+2. Kopeeri fail `loo.ps1` oma arvutisse
 
-3. ava powershell ja navigeeri loo.ps1 faili asukohta
+3. Ava PowerShell ja navigeeri `loo.ps1` faili asukohta
 
-4. käivita script
-´´´ps
-.\loo.ps1 -ip 192.123.123.123
-´´´
+4. Käivita skript:
+```powershell
+.\loo.ps1 -ip 192.168.1.100
+```
+
+## Allalaadimised
+
+**OpenSSL (64-bit):** https://slproweb.com/products/Win32OpenSSL.html
+
+## Väljund
+
+- `server.pfx` - põhifail printeri jaoks
+- `certs\` - kõik muud sertifikaadifailid
