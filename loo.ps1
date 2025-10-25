@@ -31,12 +31,7 @@ function Install-OpenSSL {
     # Manual install
     Write-Host "Chocolatey not available. Please install OpenSSL manually (64-bit):" -ForegroundColor Yellow
     Write-Host "-- Download Win32/Win64 OpenSSL --" -ForegroundColor Cyan
-    Write-Host "64bit:" -ForegroundColor Cyan
-    Write-Host " -> https://slproweb.com/download/Win64OpenSSL_Light-3_6_0.exe" -ForegroundColor Cyan
-    Write-Host " -> https://slproweb.com/download/Win64OpenSSL_Light-3_6_0.msi" -ForegroundColor Cyan
-    Write-Host "32bit:" -ForegroundColor Cyan
-    Write-Host " -> https://slproweb.com/download/Win32OpenSSL_Light-3_6_0.exe" -ForegroundColor Cyan
-    Write-Host " -> https://slproweb.com/download/Win32OpenSSL_Light-3_6_0.msi" -ForegroundColor Cyan
+    Write-Host "-> https://slproweb.com/products/Win32OpenSSL.html" -ForegroundColor Cyan
     Write-Host "After installation, restart PowerShell and run this script again."
     exit 1
 }
