@@ -1,31 +1,44 @@
 # Novitus printeri sertifikaatide generaator
 
-## Kasutamine
+## 1. Ettevalmistus (ainult esimesel korral)
 
-1. Luba skriptide käivitamine:
-```powershell
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-```
+### OpenSSL install
 
-2. Kopeeri fail `loo.ps1` oma arvutisse
+1. Laadi alla OpenSSL: [https://slproweb.com/products/Win32OpenSSL.html](https://slproweb.com/products/Win32OpenSSL.html)
+2. Installi OpenSSL
+3. **Ava PowerShell administraatorina** (parem klõps → "Run as Administrator")
+4. Lisa OpenSSL keskkonnamuutujasse:
+   ```powershell
+   [Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\Program Files\OpenSSL-Win64\bin", [EnvironmentVariableTarget]::Machine)
+   ```
+5. **Sulge PowerShell täielikult**
 
-3. Ava PowerShell ja navigeeri `loo.ps1` faili asukohta
+### Skriptide lubamine
 
-4. Käivita skript:
-```powershell
-.\loo.ps1 -ip 192.168.1.100
-```
+1. **Ava PowerShell administraatorina**
+2. Luba skriptide käivitamine:
+   ```powershell
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+   ```
 
-## Allalaadimised
+## 2. Kasutamine
 
-**OpenSSL (64-bit):** https://slproweb.com/products/Win32OpenSSL.html
-
-Peale OpenSSL installi määra environment väärtus(veendu et installisid `C:\Program Files\OpenSSL-Win64`):
-```powershell
-[Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\Program Files\OpenSSL-Win64\bin", [EnvironmentVariableTarget]::Machine)
-```
+1. **Ava PowerShell administraatorina**
+2. Navigeeri `loo.ps1` faili asukohta:
+   ```powershell
+   cd D:\DEV\novitus
+   ```
+3. Käivita skript printeri IP-aadressiga:
+   ```powershell
+   .\loo.ps1 -ip 192.168.1.100
+   ```
 
 ## Väljund
 
 - `server.pfx` - põhifail printeri jaoks
 - `certs\` - kõik muud sertifikaadifailid
+
+## Skriptifailid
+
+- `loo.ps1` - Meie täiustatud versioon (automaatne OpenSSL kontroll)
+- `skript.ps1` - Algne firmapoolne versioon
