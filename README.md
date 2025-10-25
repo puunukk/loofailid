@@ -26,7 +26,9 @@
 1. **Ava PowerShell administraatorina**
 2. Navigeeri `loo.ps1` faili asukohta:
    ```powershell
-   cd D:\DEV\novitus
+   cd ~\Downloads
+   # or
+   cd ~\Desktop
    ```
 3. Käivita skript printeri IP-aadressiga:
    ```powershell
