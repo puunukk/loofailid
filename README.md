@@ -20,6 +20,11 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 **OpenSSL (64-bit):** https://slproweb.com/products/Win32OpenSSL.html
 
+Peale OpenSSL installi määra environment väärtus(veendu et installisid `C:\Program Files\OpenSSL-Win64`):
+```powershell
+[Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\Program Files\OpenSSL-Win64\bin", [EnvironmentVariableTarget]::Machine)
+```
+
 ## Väljund
 
 - `server.pfx` - põhifail printeri jaoks
